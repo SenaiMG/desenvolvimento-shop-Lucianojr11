@@ -1,50 +1,15 @@
+{% extends 'layout.html' %}
 {% load static %}
-<!DOCTYPE html>
+{% block content %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
-    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+ 
+ 
     <title>Template-Bootstrap v5.3</title>
 </head>
 <body>
     <!--NavBar-->
-    <header data-bs-theme="dark">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">TemplateShop</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-              <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../index.html"><img src="{% static 'assets/img/loja.png' %}" alt="Loja" width="32px" height="32px"></a>
-                </li>
-                <ul class="navbar-nav flex-grow-1 justify-content-between">
-                    <li class="nav-item"><a class="nav-link" href="#produtos">Produtos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#suporte">Suporte</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../produtos.html">Preços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../carrinho.html">
-                      <img src="{% static 'assets/img/carrinho.png' %}" alt="carrinho">
-                    </a></li>
-                </ul>
-              </ul>
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquise Produtos" aria-label="Search">
-                <button class="btn btn-outline-success me-4" type="submit">Pesquisar</button>
-              </form>
-              <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Entrar</button>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Registrar</button>
-              </div>
-            </div>
-          </div>
-        </nav>
-    </header>
+    {% include 'partials/header.html' %}
     <main>
       <div class="b-example-divider text-bg-dark py-2" style="opacity: 50%;"></div>
       <!--Modal Login-->
@@ -187,53 +152,7 @@
       <!--Feedback/Contatos-->
     </main>
     <!--Footer-->
-    <footer class="container py-5">
-        <div class="row">
-          <div class="col-12 col-md">
-            <a class="nav-link active" aria-current="page" href="#"><img src="assets/img/loja.png" alt="Loja" width="32px" height="32px"></a>
-            <small class="d-block mb-3 text-body-secondary">© 2017–2023 TemplateShop</small>
-          </div>
-          <div class="col-6 col-md">
-            <h5>Créditos</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="link-secondary text-decoration-none" href="#">Redes Sociais</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Créditos de Criação</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Créditos a Equipe</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Vagas para Desenvolvedores</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#"><li><a class="link-secondary text-decoration-none" href="#"><div> Imagens pegas em <a href="https://unsplash.com/pt-br" title="Unsplash"> Unsplash </a></div></a></li>
-              <li><a class="link-secondary text-decoration-none" href="#"><div> Ícones feitos por <a href="https://www.flaticon.com/br/autores/freepik" title="Freepik"> Freepik em </a><a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div></a></li>
-              
-            </ul>
-          </div>
-          <div class="col-6 col-md">
-            <h5>Suporte</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="link-secondary text-decoration-none" href="#">Número</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Feedback</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Ajuda</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Gmail</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md">
-            <h5>Produtos</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="link-secondary text-decoration-none" href="#">Business</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Education</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Government</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Gaming</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md">
-            <h5>Sobre</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="link-secondary text-decoration-none" href="#">Equipe</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Localização</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Privacidade</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Depoimentos</a></li>
-              <li><a class="link-secondary text-decoration-none" href="#">Termos de Uso</a></li>
-            </ul>
-          </div>
-        </div>
-    </footer>
+    {% include 'partials/footer.html' %}
 </body>
 </html>
+{% endblock %}
